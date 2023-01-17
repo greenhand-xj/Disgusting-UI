@@ -1,0 +1,24 @@
+@import '../../style/variable.scss';
+
+$button-border-radius: 4px;
+
+.dis-btn {
+  @apply shadow-sm shadow-slate-400 h-[30px] px-[14px] text-white whitespace-nowrap inline-flex items-center justify-center select-none cursor-pointer box-border outline-none border-none relative;
+  border-radius: $button-border-radius;
+  font-size: $dis-font-size-md;
+  &--danger {
+    background-color: $dis-danger;
+  }
+  &--success {
+    background-color: $dis-success;
+  }
+  &--warning {
+    background-color: $dis-warning;
+  }
+  &--primary {
+    background-color: $dis-primary;
+  }
+}
+.dis-btn__content {
+  @apply flex items-center flex-wrap;
+}
