@@ -10,7 +10,7 @@ export default defineComponent({
     return () => {
       return (
         <button class={`dis-btn dis-btn--${type.value}`}>
-          <div class="dis-btn__content">{slots.default?.()}</div>
+          <div class="dis-btn__content">{slots.default?.() || ''}</div>
         </button>
       )
     }

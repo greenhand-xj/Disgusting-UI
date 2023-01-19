@@ -24,16 +24,23 @@ $dis-light-text: var(
   #ffffff
 ); // 有色深色背景下字体颜色（固定）
 $dis-primary: var(--dis-primary, #3a7afe); // 主要按钮，同品牌色
-$dis-success: var(--dis-success, #00c48f); // 主要按钮，同品牌色
-$dis-warning: var(--dis-warning, #ff9f00); // 主要按钮，同品牌色
-$dis-danger: var(--dis-success, #f44336); // 主要按钮，同品牌色
+$dis-success: var(--dis-success, #00c48f); // 成功按钮，同品牌色
+$dis-warning: var(--dis-warning, #ff9f00); // 警告按钮，同品牌色
+$dis-danger: var(--dis-success, #f44336); // 危险按钮，同品牌色
 
-$dis-primary-disabled: var(
-  --dis-primary-disabled,
-  #879ada
-); // 主要按钮，同品牌色
-$dis-primary-hover: var(--dis-primary-hover, #7693f5); // 主要按钮悬停
-$dis-primary-active: var(--dis-primary-active, #344899); // 主要按钮激活
+$dis-primary-disabled: var(--dis-primary-disabled, #879ada);
+
+// 主要按钮，同品牌色
+$dis-primary-active: var(--dis-primary-active, #0e42d2); // 主要按钮悬停
+$dis-warning-active: var(--dis-warning-active, #d25f00); // 警告按钮悬停
+$dis-success-active: var(--dis-success-active, #009a29); // 成功按钮悬停
+$dis-danger-active: var(--dis-danger-active, #cb272d); // 危险按钮悬停
+
+$dis-primary-hover: var(--dis-primary-hover, #6b9bfe); // 主要按钮激活
+$dis-success-hover: var(--dis-success-hover, #40d3ab); // 成功按钮激活
+$dis-warning-hover: var(--dis-warning-hover, #ffb740); // 警告按钮激活
+$dis-danger-hover: var(--dis-danger-hover, #f77268); // 危险按钮激活
+
 $dis-text: var(--dis-text, #252b3a); // 正文文本
 $dis-disabled-text: var(--dis-disabled-text, #8891a7); // 正文文本
 $dis-disabled-bg: var(--dis-disabled-bg, #c2cce5); // 正文文本

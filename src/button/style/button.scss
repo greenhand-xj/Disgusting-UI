@@ -1,24 +1,11 @@
-@import '../../style/variable.scss';
-
-$button-border-radius: 4px;
+@use './button-type.scss';
+@import './button-base.scss';
 
 .dis-btn {
-  @apply shadow-sm shadow-slate-400 h-[30px] px-[14px] text-white whitespace-nowrap inline-flex items-center justify-center select-none cursor-pointer box-border outline-none border-none relative;
-  border-radius: $button-border-radius;
-  font-size: $dis-font-size-md;
-  &--danger {
-    background-color: $dis-danger;
-  }
-  &--success {
-    background-color: $dis-success;
-  }
-  &--warning {
-    background-color: $dis-warning;
-  }
-  &--primary {
-    background-color: $dis-primary;
-  }
-}
-.dis-btn__content {
-  @apply flex items-center flex-wrap;
+  // 导入基本属性
+  @include button-base;
+  // 导入type相关的属性
+  @include button-variant(button-type.$type);
+  // 导入伪类
+  @include button-variant(button-type.$pseudo, true);
 }

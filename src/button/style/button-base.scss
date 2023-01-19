@@ -1,0 +1,39 @@
+@import '../../style/variable.scss';
+
+$button-border-radius: 4px;
+
+@mixin button-base {
+  @apply min-w-[30px] mx-[2px] shadow-sm shadow-slate-300 h-[30px] px-[14px] text-white whitespace-nowrap inline-flex items-center justify-center select-none cursor-pointer box-border outline-none border-none relative;
+  border-radius: $button-border-radius;
+  font-size: $dis-font-size-md;
+  transition: box-shadow 0.2s, background-color 0.25s;
+  &:active {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 4px 4px;
+    @apply shadow-slate-400;
+  }
+
+  .dis-btn__content {
+    @apply flex items-center flex-wrap;
+  }
+}
+
+@mixin button-variant($variant, $pseudo: false) {
+  @each $key, $value in $variant {
+    //第一层
+    &.dis-btn--#{$key} {
+      @each $item-key, $item-value in $value {
+        // 每个类型 primary~~~的详细配置
+        @if $pseudo {
+          &:#{$item-key} {
+            @each $sub-item-key, $sub-item-value in $item-value {
+              #{$sub-item-key}: $sub-item-value;
+            }
+          }
+        } @else {
+          // 如果不是伪类就直接设置样式
+          #{$item-key}: $item-value;
+        }
+      }
+    }
+  }
+}
