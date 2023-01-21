@@ -13,6 +13,9 @@
       "ESNext",
       "DOM"
     ],
+    "types": [
+      "vitest/globals"
+    ],
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": ".",
