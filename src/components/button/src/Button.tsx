@@ -38,7 +38,10 @@ export default defineComponent({
           onClick={handleClick}
         >
           {loading.value && (
-            <div class="loading__content">
+            <div
+              class="loading__content"
+              style={{ marginRight: slots.default ? '3px' : '0px' }}
+            >
               <svg viewBox="25 25 50 50">
                 <circle r="20" cy="50" cx="50"></circle>
               </svg>

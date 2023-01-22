@@ -24,9 +24,7 @@ setTimeout(() => {
     <dis-button type="danger" shape="circle" loading></dis-button>
     <dis-button type="success" shape="circle" size="small" loading></dis-button>
     <dis-button type="warning" shape="circle" size="mini" loading></dis-button>
-    <dis-button type="warning" shape="round" size="large" loading
-      >wode</dis-button
-    >
+    <dis-button type="warning" shape="round" size="large" loading></dis-button>
   </div>
 </template>
 

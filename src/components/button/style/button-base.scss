@@ -21,7 +21,6 @@
   &.#{$prefix}-btn--loading {
     @apply relative cursor-default;
     .loading__content {
-      @apply mr-[3px];
       svg {
         width: 2em;
         transform-origin: center;
