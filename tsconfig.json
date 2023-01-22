@@ -26,6 +26,9 @@
       "@components/*": [
         "src/components/*"
       ],
+      "@utils/*": [
+        "src/_utils/*"
+      ]
     },
   },
   "include": [

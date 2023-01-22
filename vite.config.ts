@@ -11,11 +11,14 @@ export default defineConfig({
     alias: {
       '@components': resolve(__dirname, 'src/components'),
       '@': resolve(__dirname, 'src'),
+      '@utils': resolve(__dirname, 'src/_utils'),
     },
   },
   // 测试环境配置
   test: {
-    include: ['src/**/__tes__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    include: [
+      'src/components/**/__test__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+    ],
     globals: true,
     environment: 'happy-dom',
     transformMode: {
