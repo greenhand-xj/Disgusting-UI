@@ -1,0 +1,148 @@
+@import '../../../style/variable.scss';
+
+//按钮类型的配置
+$type: (
+  primary: (
+    background-color: $dis-primary,
+  ),
+  success: (
+    background-color: $dis-success,
+  ),
+  danger: (
+    background-color: $dis-danger,
+  ),
+  warning: (
+    background-color: $dis-warning,
+  ),
+  text: (
+    background-color: #fff,
+    color: $dis-primary,
+    box-shadow: none,
+  ),
+  outline: (
+    border: 0.5px solid $dis-primary,
+    box-shadow: none,
+    color: $dis-primary,
+  ),
+);
+
+$shape: (
+  square: (
+    border-radius: 4px,
+  ),
+  round: (
+    border-radius: 14px,
+  ),
+  circle: (
+    border-radius: 50%,
+  ),
+);
+
+$size: (
+  mini: (
+    height: 22px,
+    font-size: $dis-font-size-md,
+  ),
+  small: (
+    height: 26px,
+    font-size: $dis-font-size-md,
+  ),
+  medium: (
+    height: 30px,
+    font-size: $dis-font-size-lg,
+  ),
+  large: (
+    height: 34px,
+    font-size: $dis-font-size-lg,
+  ),
+);
+
+// 按钮的伪类
+$pseudo: (
+  outline: (
+    hover: (
+      border-color: $dis-primary-hover,
+      color: $dis-primary-hover,
+    ),
+    focus: (
+      border-color: $dis-primary-hover,
+      color: $dis-primary-hover,
+    ),
+    active: (
+      border-color: $dis-primary-active,
+      color: $dis-primary-active,
+    ),
+    disabled: (
+      border-color: #94bfff,
+      background-color: #fff,
+      color: #94bfff,
+    ),
+  ),
+  primary: (
+    hover: (
+      background-color: $dis-primary-hover,
+    ),
+    focus: (
+      background-color: $dis-primary-hover,
+    ),
+    active: (
+      background-color: $dis-primary-active,
+    ),
+    disabled: (
+      background-color: $dis-primary-disabled,
+    ),
+  ),
+  success: (
+    hover: (
+      background-color: $dis-success-hover,
+    ),
+    focus: (
+      background-color: $dis-success-hover,
+    ),
+    active: (
+      background-color: $dis-success-active,
+    ),
+    disabled: (
+      background-color: $dis-success-disabled,
+    ),
+  ),
+  danger: (
+    hover: (
+      background-color: $dis-danger-hover,
+    ),
+    focus: (
+      background-color: $dis-danger-hover,
+    ),
+    active: (
+      background-color: $dis-danger-active,
+    ),
+    disabled: (
+      background-color: $dis-danger-disabled,
+    ),
+  ),
+  warning: (
+    hover: (
+      background-color: $dis-warning-hover,
+    ),
+    focus: (
+      background-color: $dis-warning-hover,
+    ),
+    active: (
+      background-color: $dis-warning-active,
+    ),
+    disabled: (
+      background-color: $dis-warning-disabled,
+    ),
+  ),
+  text: (
+    hover: (
+      background-color: $dis-text-hover,
+    ),
+    active: (
+      background-color: $dis-text-active,
+    ),
+    disabled: (
+      color: $dis-primary-disabled,
+    ),
+  ),
+);

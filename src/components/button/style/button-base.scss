@@ -1,0 +1,85 @@
+@import '../../../style/variable.scss';
+
+@mixin button-base {
+  @apply min-w-[50px] mx-[2px] shadow-sm shadow-slate-300 px-[14px] text-white whitespace-nowrap inline-flex items-center justify-center select-none cursor-pointer box-border  border-none relative;
+  transition: box-shadow 0.2s, background-color 0.25s;
+  outline: none;
+  &:active {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 4px 4px;
+    @apply shadow-slate-400;
+  }
+
+  .dis-btn__content {
+    @apply flex items-center flex-wrap;
+  }
+  &[disabled] {
+    @apply shadow-none cursor-not-allowed;
+  }
+  &.dis-btn--block {
+    @apply w-full;
+  }
+  &.dis-btn--loading {
+    @apply relative cursor-default;
+    .loading__content {
+      @apply mr-[3px];
+      svg {
+        width: 2em;
+        transform-origin: center;
+        animation: rotate4 2s linear infinite;
+      }
+
+      circle {
+        fill: none;
+        stroke: #eef3ff;
+        stroke-width: 2;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        animation: dash4 1.5s ease-in-out infinite;
+      }
+    }
+
+    @keyframes rotate4 {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash4 {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dashoffset: -125px;
+      }
+    }
+  }
+}
+
+@mixin button-variant($variant, $pseudo: false) {
+  @each $key, $value in $variant {
+    //第一层
+    &.dis-btn--#{$key} {
+      @each $item-key, $item-value in $value {
+        // 每个类型 primary~~~的详细配置
+        @if $pseudo {
+          &:#{$item-key} {
+            @each $sub-item-key, $sub-item-value in $item-value {
+              #{$sub-item-key}: $sub-item-value;
+            }
+          }
+        } @else {
+          // 如果不是伪类就直接设置样式
+          #{$item-key}: $item-value;
+        }
+      }
+    }
+  }
+}

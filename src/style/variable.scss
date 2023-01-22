@@ -2,16 +2,12 @@
 $prefix: 'dis';
 // 定义主题变量
 $s-border-radius: var(--dis-border-radius, 2px); //一般圆角
-$dis-font-size-sm: var(
-  --dis-font-size-md,
-  10px
-); //当组件size为''时使用此字号大小
 $dis-font-size-md: var(
   --dis-font-size-md,
   12px
 ); //当组件size为''时使用此字号大小
 $dis-font-size-lg: var(
-  --dis-font-size-md,
+  --dis-font-size-lg,
   14px
 ); //当组件size为''时使用此字号大小
 $dis-animation-duration-slow: var(--dis-animation-duration-slow, 300ms);
@@ -26,22 +22,27 @@ $dis-light-text: var(
 $dis-primary: var(--dis-primary, #3a7afe); // 主要按钮，同品牌色
 $dis-success: var(--dis-success, #00c48f); // 成功按钮，同品牌色
 $dis-warning: var(--dis-warning, #ff9f00); // 警告按钮，同品牌色
-$dis-danger: var(--dis-success, #f44336); // 危险按钮，同品牌色
-
-$dis-primary-disabled: var(--dis-primary-disabled, #879ada);
+$dis-danger: var(--dis-danger, #f44336); // 危险按钮，同品牌色
 
 // 主要按钮，同品牌色
 $dis-primary-active: var(--dis-primary-active, #0e42d2); // 主要按钮悬停
 $dis-warning-active: var(--dis-warning-active, #d25f00); // 警告按钮悬停
 $dis-success-active: var(--dis-success-active, #009a29); // 成功按钮悬停
 $dis-danger-active: var(--dis-danger-active, #cb272d); // 危险按钮悬停
+$dis-text-active: var(--dis-text-active, #e5e6eb); // 危险按钮悬停
 
 $dis-primary-hover: var(--dis-primary-hover, #6b9bfe); // 主要按钮激活
 $dis-success-hover: var(--dis-success-hover, #40d3ab); // 成功按钮激活
 $dis-warning-hover: var(--dis-warning-hover, #ffb740); // 警告按钮激活
 $dis-danger-hover: var(--dis-danger-hover, #f77268); // 危险按钮激活
+$dis-text-hover: var(--dis-text-hover, #f2f3f5); // 文字按钮，同品牌色
 
-$dis-text: var(--dis-text, #252b3a); // 正文文本
+$dis-primary-disabled: var(--dis-primary-disabled, #94bfff);
+$dis-success-disabled: var(--dis-success-disabled, #7be188);
+$dis-danger-disabled: var(--dis-danger-disabled, #fbaca3);
+$dis-warning-disabled: var(--dis-warning-disabled, #ffcf8b);
+$dis-text-disabled: var(--dis-text-disabled, #94bfff);
+
 $dis-disabled-text: var(--dis-disabled-text, #8891a7); // 正文文本
 $dis-disabled-bg: var(--dis-disabled-bg, #c2cce5); // 正文文本
 $dis-disabled-line: var(--dis-disabled-line, #a9b0c0); // 正文文本
