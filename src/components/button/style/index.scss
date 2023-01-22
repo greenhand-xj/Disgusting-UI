@@ -1,7 +1,7 @@
 @use './button-config.scss';
 @import './button-base.scss';
 
-.dis-btn {
+.#{$prefix}-btn {
   // 导入基本属性
   @include button-base;
   // 导入type相关的属性
@@ -15,65 +15,66 @@
 }
 
 // patch
-.dis-btn.dis-btn--text:disabled {
+.#{$prefix}-btn.#{$prefix}-btn--text:disabled {
   &:active,
   &:hover {
     background-color: #fff;
   }
 }
 
-.dis-btn {
-  &.dis-btn--mini {
-    &.dis-btn--circle {
+.#{$prefix}-btn {
+  &.#{$prefix}-btn--mini {
+    &.#{$prefix}-btn--circle {
       @apply h-[22px] p-0;
       min-width: 22px;
     }
   }
-  &.dis-btn--small {
-    &.dis-btn--circle {
+  &.#{$prefix}-btn--small {
+    &.#{$prefix}-btn--circle {
       @apply min-w-[26px] h-[26px] p-0;
     }
   }
-  &.dis-btn--medium {
-    &.dis-btn--circle {
+  &.#{$prefix}-btn--medium {
+    &.#{$prefix}-btn--circle {
       @apply min-w-[30px] h-[30px] p-0;
     }
   }
-  &.dis-btn--large {
-    &.dis-btn--circle {
+  &.#{$prefix}-btn--large {
+    &.#{$prefix}-btn--circle {
       @apply min-w-[34px] h-[34px] p-0;
     }
   }
 }
 
-.dis-btn.dis-btn--loading {
-  &.dis-btn--large .loading__content svg {
+.#{$prefix}-btn.#{$prefix}-btn--loading {
+  &.#{$prefix}-btn--large .loading__content svg {
     width: 2em;
   }
-  &.dis-btn--medium .loading__content svg {
+  &.#{$prefix}-btn--medium .loading__content svg {
     width: 1.8em;
   }
-  &.dis-btn--small .loading__content svg {
+  &.#{$prefix}-btn--small .loading__content svg {
     width: 1.6em;
   }
-  &.dis-btn--mini .loading__content svg {
+  &.#{$prefix}-btn--mini .loading__content svg {
     width: 1.4em;
   }
-  &.dis-btn--outline .loading__content circle {
-    stroke: #94bfff;
+  &.#{$prefix}-btn--outline .loading__content circle {
+    stroke: $dis-outline-loading-color;
   }
-  &.dis-btn--text .loading__content circle {
-    stroke: #94bfff;
+  &.#{$prefix}-btn--text .loading__content circle {
+    stroke: $dis-outline-loading-color;
   }
-  &.dis-btn-circle .loading__content {
+  &.#{$prefix}-btn-circle .loading__content {
     margin-right: 0;
   }
 }
 
-.dis-btn.dis-btn--loading[disabled].dis-btn--circle .loading__content {
+.#{$prefix}-btn.#{$prefix}-btn--loading[disabled].#{$prefix}-btn--circle
+  .loading__content {
   margin-right: 0px;
 }
 
-.dis-btn.dis-btn--large.dis-btn--round {
+.#{$prefix}-btn.#{$prefix}-btn--large.#{$prefix}-btn--round {
   border-radius: 18px;
 }

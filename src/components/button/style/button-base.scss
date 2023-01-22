@@ -9,16 +9,16 @@
     @apply shadow-slate-400;
   }
 
-  .dis-btn__content {
+  .#{$prefix}-btn__content {
     @apply flex items-center flex-wrap;
   }
   &[disabled] {
     @apply shadow-none cursor-not-allowed;
   }
-  &.dis-btn--block {
+  &.#{$prefix}-btn--block {
     @apply w-full;
   }
-  &.dis-btn--loading {
+  &.#{$prefix}-btn--loading {
     @apply relative cursor-default;
     .loading__content {
       @apply mr-[3px];
@@ -30,7 +30,7 @@
 
       circle {
         fill: none;
-        stroke: #eef3ff;
+        stroke: $dis-loading-border-color-default;
         stroke-width: 2;
         stroke-dasharray: 1, 200;
         stroke-dashoffset: 0;
@@ -66,7 +66,7 @@
 @mixin button-variant($variant, $pseudo: false) {
   @each $key, $value in $variant {
     //第一层
-    &.dis-btn--#{$key} {
+    &.#{$prefix}-btn--#{$key} {
       @each $item-key, $item-value in $value {
         // 每个类型 primary~~~的详细配置
         @if $pseudo {

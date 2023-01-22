@@ -24,4 +24,11 @@ describe('dis-button', () => {
     const wrapper = mount(() => <Button>{{ default: () => text }}</Button>)
     expect(wrapper.html()).toContain(text)
   })
+
+  test('loading button should work', () => {
+    const wrapper = mount(() => <Button loading></Button>)
+    const cls = wrapper.get('button').classes()
+    expect(cls).toContain('dis-btn--loading')
+    wrapper.unmount()
+  })
 })

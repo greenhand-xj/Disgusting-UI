@@ -24,7 +24,7 @@ export default defineComponent({
       }
     })
     const handleClick = (ev: MouseEvent) => {
-      if (disabled.value) {
+      if (disabled.value || loading.value) {
         ev.preventDefault()
         return
       }

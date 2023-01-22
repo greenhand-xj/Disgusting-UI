@@ -73,9 +73,9 @@ $pseudo: (
       color: $dis-primary-active,
     ),
     disabled: (
-      border-color: #94bfff,
+      border-color: $dis-outline-disabled-color,
       background-color: #fff,
-      color: #94bfff,
+      color: $dis-outline-disabled-color,
     ),
   ),
   primary: (
