@@ -36,7 +36,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "docs/vitepress/.vitepress/theme"
+    "docs/vitepress/.vitepress/theme",
   ],
   "references": [
     {
