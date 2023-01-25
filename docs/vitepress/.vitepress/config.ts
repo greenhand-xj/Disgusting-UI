@@ -2,27 +2,24 @@ import { defineConfig } from 'vitepress'
 import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 
 export default defineConfig({
+  title: 'Disgusting-UI',
+  description: '一个基于 Vue3+TSX+Tailwind的一个小组件库.',
+  // base: '/',
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]],
+
   themeConfig: {
+    logo: '/logo.svg',
+    // nav
+    nav: [{ text: '文档', link: ' /guide/getting-started' }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/greenhand-xj/Disgusting-UI' },
+    ],
     sidebar: {
-      '/': [
-        { text: '快速开始', items: [] },
+      '/guide/': [
         {
-          text: '通用',
-          items: [{ text: 'Button 按钮', link: '/components/button/' }],
-        },
-        { text: '导航', items: [] },
-        { text: '反馈', items: [] },
-        {
-          text: '数据录入',
-          items: [],
-        },
-        {
-          text: '数据展示',
-          items: [],
-        },
-        {
-          text: '布局',
-          items: [],
+          text: '快速开始',
+          collapsible: true,
+          items: [{ text: 'installation', link: '/guide/getting-started' }],
         },
       ],
     },
