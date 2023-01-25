@@ -26,3 +26,6 @@ dist-ssr
 
 # vitepress cache file
 docs/vitepress/.vitepress/cache/*
+
+# eslint cache file
+.eslintcache
