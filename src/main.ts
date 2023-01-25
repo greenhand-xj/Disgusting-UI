@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import './index.scss'
-import Button from './components/button'
 import { setGlobalConfig } from './_utils/global-config'
 
 import ui from '../dist'
