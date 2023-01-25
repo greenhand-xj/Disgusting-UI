@@ -17,6 +17,6 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    'prettier/prettier': ['error', { endOfLine: 'off' }],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 }

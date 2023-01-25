@@ -41,16 +41,16 @@ const createPackageJson = (name) => {
   // 预设
   const fileStr = `{
     "name": "${name ? name : 'disgusting-ui'}",
-    "version": "0.0.0",
+    "version": "0.0.2",
     "main": "${name ? 'index.umd.cjs' : 'disgusting-ui.umd.cjs'}",
     "module": "${name ? 'index.js' : 'disgusting-ui.js'}",
     "type": "module",
-    "style": "style.css",
     "exports": {
       ".": {
         "import": "./${name ? 'index.js' : 'disgusting-ui.js'}",
         "require": "./${name ? 'index.umd.cjs' : 'disgusting-ui.umd.cjs'}"
-      }
+      },
+      "./style": "./style.css"
     },
     "types": "index.d.ts",
     "author": "xbx",

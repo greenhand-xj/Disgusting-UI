@@ -1,7 +1,6 @@
 // 入口文件
 import type { App, Plugin } from 'vue'
 import * as components from './components'
-import type * as types from './components'
 export default {
   install(app: App) {
     Object.keys(components).forEach((key) => {
