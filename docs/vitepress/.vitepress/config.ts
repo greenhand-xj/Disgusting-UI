@@ -15,11 +15,11 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/greenhand-xj/Disgusting-UI' },
     ],
     sidebar: {
-      '/guide/': [
+      '/guide/getting-started': [
         {
-          text: '快速开始',
-          collapsible: true,
-          items: [{ text: 'installation', link: '/guide/getting-started' }],
+          text: 'getting-started',
+          collapsible: false,
+          items: [],
         },
       ],
     },
