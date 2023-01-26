@@ -1,6 +1,6 @@
 import { computed, defineComponent, SetupContext, toRefs } from 'vue'
 import { buttonProps, ButtonProps } from './button-types'
-import { getPrefixCls } from '@utils/global-config'
+import { getPrefixCls } from '../../../_utils/global-config'
 import '../style/index.scss'
 
 export default defineComponent({
