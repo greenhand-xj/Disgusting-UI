@@ -9,7 +9,7 @@ import fs from 'fs'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const entryFile = resolve(__dirname, '../src/components/index.ts')
-const outputDir = resolve(__dirname, '../dist')
+const outputDir = resolve(__dirname, '../lib')
 const componentDirs = resolve(__dirname, '../src/components')
 
 const baseConfig = defineConfig({
