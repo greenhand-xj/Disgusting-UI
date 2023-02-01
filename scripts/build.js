@@ -5,6 +5,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 import { fileURLToPath } from 'url'
 import fsExtra from 'fs-extra'
+// import version from '../src/version'
+import json from '../package.json' assert { type: 'json' }
 import fs from 'fs'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
@@ -34,7 +36,7 @@ const createPackageJson = (name) => {
   // 预设
   const fileStr = `{
     "name": "${name ? name : 'disgusting-ui'}",
-    "version": "0.0.2",
+    "version": "${json.version}",
     "main": "${name ? 'index.umd.cjs' : 'disgusting-ui.umd.cjs'}",
     "module": "${name ? 'index.js' : 'disgusting-ui.js'}",
     "type": "module",

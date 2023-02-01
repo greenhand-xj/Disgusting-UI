@@ -1,22 +1,22 @@
 {
   "name": "disgusting-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build.js",
+    "build": "pnpm run generate-version && node scripts/build.js",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.ts,.tsx,.vue",
     "prepare": "husky install",
     "vp:dev": "vitepress dev docs/vitepress",
     "vp:build": "vitepress build docs/vitepress",
     "vp:preview": "vitepress preview docs/vitepress",
+    "generate-version": "node scripts/generate-version",
     "test": "vitest",
     "pb": "publish.sh"
   },
   "dependencies": {
-    "disgusting-ui": "^0.0.2",
     "vue": "^3.2.45"
   },
   "devDependencies": {
