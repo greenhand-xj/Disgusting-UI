@@ -8,6 +8,7 @@ specifiers:
   '@vitejs/plugin-vue-jsx': ^3.0.0
   '@vue/test-utils': ^2.2.7
   autoprefixer: ^10.4.13
+  disgusting-ui: ^0.0.4
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-prettier: ^4.2.1
@@ -35,6 +36,7 @@ specifiers:
   vue-tsc: ^1.0.24
 
 dependencies:
+  disgusting-ui: 0.0.4
   vue: 3.2.45
 
 devDependencies:
@@ -1928,6 +1930,10 @@ packages:
     dependencies:
       path-type: 4.0.0
     dev: true
+
+  /disgusting-ui/0.0.4:
+    resolution: {integrity: sha512-W7+b0TqZUSi5sm97RWo7JBVin7YcaII9sK/67kmgP1KquYQK7G9Qr244EF62CEGaWEbiV1p4YHdgiOTTsQuwqQ==}
+    dev: false
 
   /dlv/1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}

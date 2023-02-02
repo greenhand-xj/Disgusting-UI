@@ -17,6 +17,7 @@
     "pb": "publish.sh"
   },
   "dependencies": {
+    "disgusting-ui": "^0.0.4",
     "vue": "^3.2.45"
   },
   "devDependencies": {
