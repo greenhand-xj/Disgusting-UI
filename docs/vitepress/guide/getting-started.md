@@ -32,7 +32,8 @@ app.use(ui).mount('#app')
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import Button from 'disgusting-ui/button'
+import { Button } from 'disgusting-ui'
+// or  import Button from 'disgusting-ui/button'
 import 'disgusting-ui/button/style'
 
 const app = createApp(App)
