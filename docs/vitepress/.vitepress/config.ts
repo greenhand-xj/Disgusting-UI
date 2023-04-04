@@ -24,7 +24,10 @@ export default defineConfig({
         {
           text: '组件',
           collapsible: true,
-          items: [{ text: 'button', link: '/guide/components/button' }],
+          items: [
+            { text: 'button', link: '/guide/components/button' },
+            { text: 'tree', link: '/guide/components/tree' },
+          ],
         },
       ],
     },
