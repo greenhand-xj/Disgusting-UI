@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "cli": "node ./build/src/index.js create"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/inquirer": "^9.0.3",
     "commander": "^10.0.0",
     "fs-extra": "^11.1.0",
     "inquirer": "^9.1.4",
