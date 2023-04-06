@@ -9,7 +9,7 @@ export const treeProps = {
 } as const
 export type TreeProps = ExtractPropTypes<typeof treeProps>
 
-interface ITreeNode {
+export interface ITreeNode {
   label: string
   id?: string
   children?: ITreeNode[]
@@ -24,7 +24,7 @@ interface ITreeNode {
 }
 
 export interface IInnerTreeNode extends ITreeNode {
-  parentId?: string
-  level: string
+  parentId?: string | null
+  level: number
   isLeaf?: boolean
 }
