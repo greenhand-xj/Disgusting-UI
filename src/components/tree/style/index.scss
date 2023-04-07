@@ -1,0 +1,14 @@
+@import '../../../style/variable.scss';
+
+$dis-tree-index: 24;
+
+.#{$prefix}-tree-node {
+  display: flex;
+  align-items: center;
+}
+.#{$prefix}-tree-node-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  display: inline-block;
+}
