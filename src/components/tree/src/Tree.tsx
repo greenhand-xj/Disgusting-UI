@@ -1,14 +1,14 @@
 import { getPrefixCls } from '../../../_utils/global-config'
-import { computed, defineComponent, ref, SetupContext, toRefs } from 'vue'
-import { IInnerTreeNode, TreeProps, treeProps } from './tree-types'
-import { generateInnerTree } from './utils'
+import { computed, defineComponent, SetupContext, toRefs } from 'vue'
 import '../style/index.scss'
+import { useTree } from '@components/tree/src/composables/useTree'
+import { TreeProps, treeProps } from './tree-types'
 export default defineComponent({
   name: 'DisTree',
   props: treeProps,
   setup(props: TreeProps, { slots, emit }: SetupContext) {
     const { data } = toRefs(props)
-    const innerData = ref(generateInnerTree(data.value))
+    const { expandedTree, toggleNode } = useTree(data)
     const prefixCls = getPrefixCls('tree')
     const classes = computed(() => {
       return {
@@ -16,40 +16,6 @@ export default defineComponent({
       }
     })
 
-    const toggleNode = (node: IInnerTreeNode) => {
-      //在原始列表获取该节点
-      const currentNode = innerData.value.find((item) => item.id === node.id)
-      currentNode && (currentNode.expanded = !currentNode.expanded)
-    }
-    const getChildren = (node: IInnerTreeNode) => {
-      const result = []
-      const startIndex = innerData.value.findIndex(
-        (item) => item.id === node.id
-      )
-      for (
-        let i = startIndex + 1;
-        i < innerData.value.length && node.level < innerData.value[i].level;
-        i++
-      ) {
-        result.push(innerData.value[i])
-      }
-      return result
-    }
-    // 获取哪些展开的节点列表
-    const expandedTree = computed((): IInnerTreeNode[] => {
-      const excludedNodes: IInnerTreeNode[] = []
-      const result = []
-      for (const item of innerData.value) {
-        if (excludedNodes.includes(item)) {
-          continue
-        }
-        if (!item.expanded) {
-          excludedNodes.push(...getChildren(item))
-        }
-        result.push(item)
-      }
-      return result
-    })
     return () => {
       return (
         <div class={classes.value}>
