@@ -13,6 +13,9 @@ export default defineConfig({
       placeholder: 'Search docs',
     }),
   ],
+  server: {
+    port: 3010,
+  },
   resolve: {
     alias: {
       '@components': resolve(__dirname, '../../src/components'),
