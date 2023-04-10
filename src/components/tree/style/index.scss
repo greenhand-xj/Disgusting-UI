@@ -3,12 +3,12 @@
 $dis-tree-index: 24;
 
 .#{$prefix}-tree-node {
-  display: flex;
-  align-items: center;
+  @apply flex items-center hover:bg-slate-100 relative leading-8;
+  transform: all 300ms;
+  .#{$prefix}-tree-node__line {
+    @apply absolute w-[2px] bg-gray-300 z-10;
+  }
 }
 .#{$prefix}-tree-node-icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 5px;
-  display: inline-block;
+  @apply cursor-pointer w-[18px] h-[18px] mr-[5px] inline-block transition-transform;
 }

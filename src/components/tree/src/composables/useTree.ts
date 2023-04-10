@@ -1,6 +1,7 @@
 import { IInnerTreeNode, ITreeNode } from '../tree-types'
 import { computed, Ref, ref, unref } from 'vue'
 import { generateInnerTree } from '../utils'
+import { NODE_HEIGHT } from '../../constant'
 
 export function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
   const innerData = ref(generateInnerTree(unref(node)))
@@ -36,10 +37,24 @@ export function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
     }
     return result
   })
+
+  const computeLineHeight = (treeNode: IInnerTreeNode) => {
+    const children = getChildren(treeNode)
+    children.map((item) => {
+      if (item.hasOwnProperty('expanded') && !item.expanded) {
+        for (let i = 0; i < children.length; i++) {
+          const idx = children.findIndex((node) => node.parentId === item.id)
+          children.splice(idx, 1)
+        }
+      }
+    })
+    return NODE_HEIGHT * children.length
+  }
   return {
     toggleNode,
     innerData,
     getChildren,
     expandedTree,
+    computeLineHeight,
   }
 }
