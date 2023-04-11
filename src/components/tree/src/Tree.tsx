@@ -1,5 +1,5 @@
 import { getPrefixCls } from '../../../_utils/global-config'
-import { defineComponent, SetupContext, toRefs } from 'vue'
+import { defineComponent, SetupContext, toRefs, Transition } from 'vue'
 import '../style/index.scss'
 import { useTree } from '@components/tree/src/composables/useTree'
 import { TreeProps, treeProps } from './tree-types'
@@ -21,7 +21,7 @@ export default defineComponent({
               <div
                 class={`${prefixCls}-node`}
                 style={{
-                  paddingLeft: `${NODE_INDENT * (treeNode.level - 1)}px`,
+                  marginLeft: `${NODE_INDENT * (treeNode.level - 1)}px`,
                 }}
               >
                 {/* 连接线 */}
