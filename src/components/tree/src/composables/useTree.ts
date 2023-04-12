@@ -1,5 +1,5 @@
 import { IInnerTreeNode, ITreeNode } from '../tree-types'
-import { computed, Ref, ref, unref } from 'vue'
+import { computed, onMounted, Ref, ref, unref } from 'vue'
 import { generateInnerTree } from '../utils'
 import { NODE_HEIGHT } from '../../constant'
 
@@ -10,7 +10,7 @@ export function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
     const currentNode = innerData.value.find((item) => item.id === node.id)
     currentNode && (currentNode.expanded = !currentNode.expanded)
   }
-  const getChildren = (node: IInnerTreeNode) => {
+  const getChildren = (node: IInnerTreeNode, isRecursive = true) => {
     const result = []
     const startIndex = innerData.value.findIndex((item) => item.id === node.id)
     for (
@@ -18,7 +18,11 @@ export function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
       i < innerData.value.length && node.level < innerData.value[i].level;
       i++
     ) {
-      result.push(innerData.value[i])
+      if (isRecursive) {
+        result.push(innerData.value[i])
+      } else if (node.level === innerData.value[i].level - 1) {
+        result.push(innerData.value[i])
+      }
     }
     return result
   }
@@ -50,11 +54,36 @@ export function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
     })
     return NODE_HEIGHT * children.length
   }
+
+  onMounted(() => {
+    innerData.value.forEach((node) => {
+      node.checked && _toggleCheckNode(node)
+    })
+  })
+  const _toggleCheckNode = (treeNode: IInnerTreeNode) => {
+    const currentTreeNodeChildren = getChildren(treeNode)
+    currentTreeNodeChildren.forEach((child) => {
+      child.checked = treeNode.checked
+    })
+  }
+  const toggleCheckNode = (treeNode: IInnerTreeNode) => {
+    treeNode.checked = !treeNode.checked
+    _toggleCheckNode(treeNode)
+    if (treeNode.parentId) {
+      const parentNode = innerData.value.find(
+        (item) => item.id === treeNode.parentId
+      )
+      if (!parentNode) return
+      const siblingNodes = getChildren(parentNode, false)
+      parentNode.checked = siblingNodes.every((node) => node.checked)
+    }
+  }
   return {
     toggleNode,
     innerData,
     getChildren,
     expandedTree,
     computeLineHeight,
+    toggleCheckNode,
   }
 }

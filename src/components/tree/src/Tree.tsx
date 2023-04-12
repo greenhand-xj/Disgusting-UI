@@ -10,8 +10,9 @@ export default defineComponent({
   name: 'DisTree',
   props: treeProps,
   setup(props: TreeProps, { slots, emit }: SetupContext) {
-    const { data } = toRefs(props)
-    const { expandedTree, toggleNode, computeLineHeight } = useTree(data)
+    const { data, checkable } = toRefs(props)
+    const { expandedTree, toggleNode, computeLineHeight, toggleCheckNode } =
+      useTree(data)
     const prefixCls = getPrefixCls('tree')
     return () => {
       return (
@@ -56,6 +57,16 @@ export default defineComponent({
                     ></path>
                   </svg>
                 )}
+                {/* 复选框 */}
+                {checkable.value && (
+                  <input
+                    type="checkbox"
+                    v-model={treeNode.checked}
+                    class={`${prefixCls}-checkbox`}
+                    onClick={() => toggleCheckNode(treeNode)}
+                  />
+                )}
+                {/* 标签 */}
                 {treeNode.label}
               </div>
             </ExpandTransition>

@@ -6,6 +6,10 @@ export const treeProps = {
     required: true,
     default: () => [],
   },
+  checkable: {
+    type: Boolean,
+    default: false,
+  },
 } as const
 export type TreeProps = ExtractPropTypes<typeof treeProps>
 
