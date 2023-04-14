@@ -8,7 +8,62 @@ $dis-tree-index: 24;
   .#{$prefix}-tree-node__line {
     @apply absolute w-[2px] bg-gray-300 z-10;
   }
-}
-.#{$prefix}-tree-node-icon {
-  @apply cursor-pointer w-[18px] h-[18px] mr-[5px] inline-block transition-transform;
+  .#{$prefix}-tree-node-icon {
+    @apply cursor-pointer w-[18px] h-[18px] mr-[5px] inline-block transition-transform;
+  }
+  .#{$prefix}-tree-node-checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    /* Hide the default checkbox */
+    input {
+      display: none;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: relative;
+      top: 2px;
+      left: -3px;
+      height: 1em;
+      width: 1em;
+      background-color: #2196f300;
+      border-radius: 0.25em;
+      transition: all 0.25s;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    input:checked ~ .checkmark {
+      background-color: $dis-primary;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: '';
+      position: absolute;
+      transform: rotate(0deg);
+      border: 0.1em solid black;
+      left: 0;
+      top: 0;
+      width: 1em;
+      height: 1em;
+      border-radius: 0.25em;
+      transition: all 0.25s, border-width 0.1s;
+    }
+
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after {
+      left: 0.38em;
+      top: 0.18em;
+      width: 0.3em;
+      height: 0.6em;
+      border-color: #fff0 white white #fff0;
+      border-width: 0 0.15em 0.15em 0;
+      border-radius: 0em;
+      transform: rotate(45deg);
+    }
+  }
 }

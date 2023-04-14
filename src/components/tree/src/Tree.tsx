@@ -59,12 +59,14 @@ export default defineComponent({
                 )}
                 {/* 复选框 */}
                 {checkable.value && (
-                  <input
-                    type="checkbox"
-                    v-model={treeNode.checked}
-                    class={`${prefixCls}-checkbox`}
-                    onClick={() => toggleCheckNode(treeNode)}
-                  />
+                  <label class={`${prefixCls}-node-checkbox`}>
+                    <input
+                      type="checkbox"
+                      v-model={treeNode.checked}
+                      onClick={() => toggleCheckNode(treeNode)}
+                    />
+                    <div class="checkmark"></div>
+                  </label>
                 )}
                 {/* 标签 */}
                 {treeNode.label}
