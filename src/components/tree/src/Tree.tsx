@@ -41,6 +41,8 @@ export default defineComponent({
                   <span
                     style={{ display: 'inline-block', width: '25px' }}
                   ></span>
+                ) : slots.icon ? (
+                  slots.icon({ nodeData: treeNode, toggleNode })
                 ) : (
                   <svg
                     class={`${prefixCls}-node-icon`}
@@ -69,7 +71,9 @@ export default defineComponent({
                   </label>
                 )}
                 {/* 标签 */}
-                {treeNode.label}
+                {slots.content
+                  ? slots.content({ nodeData: treeNode })
+                  : treeNode.label}
               </div>
             </ExpandTransition>
           ))}
