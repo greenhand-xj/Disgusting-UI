@@ -10,6 +10,10 @@ export const treeProps = {
     type: Boolean,
     default: false,
   },
+  lineable: {
+    type: Boolean,
+    default: true,
+  },
 } as const
 export type TreeProps = ExtractPropTypes<typeof treeProps>
 
