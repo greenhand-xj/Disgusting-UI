@@ -8,6 +8,7 @@ import ExpandTransition from './ExpandTransition'
 import TreeNode from './components/TreeNode'
 import { TREE_UTILS } from '../constant'
 import { TreeUtils } from './components/tree-node-types'
+import TreeNodeToggle from './components/TreeNodeToggle'
 
 export default defineComponent({
   name: 'DisTree',
@@ -28,7 +29,20 @@ export default defineComponent({
           {expandedTree.value.map((treeNode) => (
             <ExpandTransition expanded={treeNode.expanded}>
               <TreeNode {...props} treeNode={treeNode}>
-                {{ content: slots.content, icon: slots.icon }}
+                {{
+                  content: (data: unknown) =>
+                    slots.content ? slots.content(data) : treeNode.label,
+                  icon: (data: unknown) =>
+                    slots.icon ? (
+                      slots.icon(data)
+                    ) : (
+                      <TreeNodeToggle
+                        class={`${prefixCls}-node-icon`}
+                        treeNode={treeNode}
+                        onClick={() => toggleNode(treeNode)}
+                      ></TreeNodeToggle>
+                    ),
+                }}
               </TreeNode>
             </ExpandTransition>
           ))}
